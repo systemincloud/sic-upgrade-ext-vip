@@ -11,7 +11,15 @@ public class VipExecute extends AbstractVipExecute implements IExtExecute {
 	public String executeOnFile(String xml) {
 		try {
 			xml = super.executeOnSic(xml);
-			xml = updateTaskVerTv(xml, "0.1.4");
+			xml = updateTaskVerColorMap     (xml, "0.1.2");
+			xml = updateTaskVerImageFromFile(xml, "0.1.3");
+			xml = updateTaskVerImageFromUrl (xml, "0.1.3");
+			xml = updateTaskVerImageToFile  (xml, "0.1.3");
+			xml = updateTaskVerTv           (xml, "0.1.4");
+			xml = updateTaskVerVideoFromFile(xml, "0.1.3");
+			xml = updateTaskVerVideoFromUrl (xml, "0.1.3");
+			xml = updateTaskVerVideoToFile  (xml, "0.1.4");
+			xml = updateTaskVerWebcam       (xml, "0.1.4");
 		} catch (TransformerException e) { }
 		return xml;
 	}
