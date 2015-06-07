@@ -1,8 +1,13 @@
 package com.systemincloud.ext.vip.modeler.upgrade.v0_3_4.to.v0_3_5;
 
+import java.io.IOException;
+
 import javax.xml.transform.TransformerException;
 
+import org.apache.commons.io.IOUtils;
+
 import com.systemincloud.ext.vip.modeler.upgrade.common.AbstractVipExecute;
+import com.systemincloud.modeler.upgrade.common.AbstractExecute;
 import com.systemincloud.modeler.upgrade.common.IExtExecute;
 
 public class VipExecute extends AbstractVipExecute implements IExtExecute {
@@ -20,9 +25,14 @@ public class VipExecute extends AbstractVipExecute implements IExtExecute {
 			xml = updateTaskVerVideoToFile  (xml, "0.1.5");
 			xml = updateTaskVerWebcam       (xml, "0.1.5");
 			
+			xml = addOnlyLocalAttribute(xml);
 			
-		} catch (TransformerException e) { }
+		} catch (TransformerException | IOException e) { }
 		return xml;
+	}
+	
+	public String addOnlyLocalAttribute(String xml) throws TransformerException, IOException {
+		return AbstractExecute.transform(xml, IOUtils.toString(VipExecute.class.getResourceAsStream("only-local.xsl"), "UTF-8"), null);
 	}
 	
 	@Override
