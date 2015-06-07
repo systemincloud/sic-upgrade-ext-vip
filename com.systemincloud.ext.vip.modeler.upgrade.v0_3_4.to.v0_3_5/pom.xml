@@ -2,9 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.systemincloud.ext.vip.modeler.upgrade</groupId>
-	<artifactId>com.systemincloud.ext.vip.modeler.upgrade.v0_3_3.to.v0_3_4</artifactId>
+	<artifactId>com.systemincloud.ext.vip.modeler.upgrade.v0_3_4.to.v0_3_5</artifactId>
 	<version>1.0.0</version>
-	<name>SiC Modeler - Ext Vip - Upgrade - 0.3.3 to 0.3.4</name>
+	<name>SiC Modeler - Ext Vip - Upgrade - 0.3.4 to 0.3.5</name>
 	
 	<dependencies>
 		<dependency><groupId>com.systemincloud.ext.vip.modeler.upgrade</groupId><artifactId>com.systemincloud.ext.vip.modeler.upgrade.common</artifactId><version>1.1.1</version>                   </dependency>
