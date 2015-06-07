@@ -16,6 +16,7 @@ public class VipExecute extends AbstractVipExecute implements IExtExecute {
 	public String executeOnFile(String xml) {
 		try {
 			xml = super.executeOnSic(xml);
+			xml = updateTaskVerColorMap     (xml, "0.1.3");
 			xml = updateTaskVerImageFromFile(xml, "0.1.4");
 			xml = updateTaskVerImageFromUrl (xml, "0.1.4");
 			xml = updateTaskVerImageToFile  (xml, "0.1.4");
