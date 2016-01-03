@@ -5,6 +5,8 @@ import javax.xml.transform.TransformerException;
 import com.systemincloud.ext.vip.modeler.upgrade.common.AbstractVipExecute;
 import com.systemincloud.modeler.upgrade.common.IExtExecute;
 
+import net.sf.saxon.s9api.SaxonApiException;
+
 public class VipExecute extends AbstractVipExecute implements IExtExecute {
 	
 	@Override
@@ -21,7 +23,7 @@ public class VipExecute extends AbstractVipExecute implements IExtExecute {
 			xml = updateTaskVerVideoToFile  (xml, "0.1.7");
 			xml = updateTaskVerWebcam       (xml, "0.1.7");
 			
-		} catch (TransformerException e) { }
+		} catch (SaxonApiException e) { }
 		return xml;
 	}
 	

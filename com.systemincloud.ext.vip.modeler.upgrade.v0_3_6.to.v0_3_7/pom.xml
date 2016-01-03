@@ -7,7 +7,7 @@
 	<name>SiC Modeler - Ext Vip - Upgrade - 0.3.6 to 0.3.6</name>
 	
 	<dependencies>
-		<dependency><groupId>com.systemincloud.ext.vip.modeler.upgrade</groupId><artifactId>com.systemincloud.ext.vip.modeler.upgrade.common</artifactId><version>1.1.1</version>                   </dependency>
+		<dependency><groupId>com.systemincloud.ext.vip.modeler.upgrade</groupId><artifactId>com.systemincloud.ext.vip.modeler.upgrade.common</artifactId><version>1.2.0</version>                   </dependency>
 		<dependency><groupId>junit</groupId>                                    <artifactId>junit</artifactId>                                           <version>4.11</version> <scope>test</scope></dependency>
 	</dependencies>
 	

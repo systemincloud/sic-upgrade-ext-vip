@@ -2,11 +2,11 @@ package com.systemincloud.ext.vip.modeler.upgrade.common;
 
 import java.io.IOException;
 
-import javax.xml.transform.TransformerException;
-
 import org.apache.commons.io.IOUtils;
 
 import com.systemincloud.modeler.upgrade.common.AbstractExecute;
+
+import net.sf.saxon.s9api.SaxonApiException;
 
 public abstract class AbstractVipExecute {
 
@@ -38,19 +38,19 @@ public abstract class AbstractVipExecute {
 		return true;
 	}
 	
-	public String updateTaskVerColorMap     (String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, colorMapVersionXsl,      "version", version); }
-	public String updateTaskVerImageFromFile(String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, imageFromFileVersionXsl, "version", version); }
-	public String updateTaskVerImageFromUrl (String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, imageFromUrlVersionXsl,  "version", version); }
-	public String updateTaskVerImageToFile  (String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, imageToFileVersionXsl,   "version", version); }
-	public String updateTaskVerTv           (String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, tvVersionXsl,            "version", version); }
-	public String updateTaskVerVideoFromFile(String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, videoFromFileVersionXsl, "version", version); }
-	public String updateTaskVerVideoFromUrl (String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, videoFromUrlVersionXsl,  "version", version); }
-	public String updateTaskVerVideoToFile  (String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, videoToFileVersionXsl,   "version", version); }
-	public String updateTaskVerWebcam       (String xml, String version) throws TransformerException { return AbstractExecute.transform(xml, webcamVersionXsl,        "version", version); }
+	public String updateTaskVerColorMap     (String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, colorMapVersionXsl,      "version", version); }
+	public String updateTaskVerImageFromFile(String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, imageFromFileVersionXsl, "version", version); }
+	public String updateTaskVerImageFromUrl (String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, imageFromUrlVersionXsl,  "version", version); }
+	public String updateTaskVerImageToFile  (String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, imageToFileVersionXsl,   "version", version); }
+	public String updateTaskVerTv           (String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, tvVersionXsl,            "version", version); }
+	public String updateTaskVerVideoFromFile(String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, videoFromFileVersionXsl, "version", version); }
+	public String updateTaskVerVideoFromUrl (String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, videoFromUrlVersionXsl,  "version", version); }
+	public String updateTaskVerVideoToFile  (String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, videoToFileVersionXsl,   "version", version); }
+	public String updateTaskVerWebcam       (String xml, String version) throws SaxonApiException { return AbstractExecute.transform2(xml, webcamVersionXsl,        "version", version); }
 	
-	public String executeTransform(Class<?> clazz, String xml, String xslName) throws TransformerException { return AbstractExecute.executeTransform(clazz, xml, xslName); }
+	public String executeTransform(Class<?> clazz, String xml, String xslName) throws SaxonApiException { return AbstractExecute.executeTransform(clazz, xml, xslName); }
 	
-	protected String executeOnSic(String xml) throws TransformerException {
+	protected String executeOnSic(String xml) throws SaxonApiException {
 		return xml;
 	}
 	

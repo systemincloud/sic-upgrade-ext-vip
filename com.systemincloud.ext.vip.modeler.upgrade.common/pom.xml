@@ -3,11 +3,11 @@
 
 	<groupId>com.systemincloud.ext.vip.modeler.upgrade</groupId>
 	<artifactId>com.systemincloud.ext.vip.modeler.upgrade.common</artifactId>
-	<version>1.1.1</version>
+	<version>1.2.0</version>
 	<name>SiC Modeler - Ext Vip - Upgrade - Common</name>
 	
 	<dependencies>
-		<dependency><groupId>com.systemincloud.modeler.upgrade</groupId><artifactId>com.systemincloud.modeler.upgrade.common</artifactId><version>2.3.3</version></dependency>
+		<dependency><groupId>com.systemincloud.modeler.upgrade</groupId><artifactId>com.systemincloud.modeler.upgrade.common</artifactId><version>2.7.0</version></dependency>
 	</dependencies>
 	
 	<build>
