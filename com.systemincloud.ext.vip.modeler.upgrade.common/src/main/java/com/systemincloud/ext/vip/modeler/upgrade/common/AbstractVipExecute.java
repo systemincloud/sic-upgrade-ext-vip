@@ -54,6 +54,7 @@ public abstract class AbstractVipExecute {
 		return xml;
 	}
 	
-	protected static final String DEP_JAVA_API = "com.systemincloud.ext.vip.modeler.tasks.javatask:com.systemincloud.ext.vip.modeler.tasks.javatask.api";
+	protected static final String DEP_JAVA_API   = "com.systemincloud.ext.vip.modeler.tasks.javatask:com.systemincloud.ext.vip.modeler.tasks.javatask.api";
+	protected static final String DEP_PYTHON_API = "com.systemincloud.ext.vip.modeler.tasks.pythontask:com.systemincloud.ext.vip.modeler.tasks.pythontask.process";
 
 }

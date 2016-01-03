@@ -1,8 +1,11 @@
 package com.systemincloud.ext.vip.modeler.upgrade.v0_3_6.to.v0_3_7;
 
-import javax.xml.transform.TransformerException;
+import java.io.IOException;
+
+import org.apache.commons.io.IOUtils;
 
 import com.systemincloud.ext.vip.modeler.upgrade.common.AbstractVipExecute;
+import com.systemincloud.modeler.upgrade.common.AbstractExecute;
 import com.systemincloud.modeler.upgrade.common.IExtExecute;
 
 import net.sf.saxon.s9api.SaxonApiException;
@@ -33,7 +36,18 @@ public class VipExecute extends AbstractVipExecute implements IExtExecute {
 	}
 	
 	@Override
-	public String executeOnPom(String pom) throws TransformerException{
-		return pom;
+	public String executeOnPom(String pom) throws SaxonApiException {
+		String ret = AbstractExecute.addDependency(pom, DEP_PYTHON_API, "0.1.0");
+		return ret;
 	}
+	
+	@Override
+    public String executeOnPyDevProjectFile(String file) {
+        String ret = null;
+		try {
+			String xsl = IOUtils.toString(VipExecute.class.getResourceAsStream("add-external-lib.xsl"), "UTF-8");
+			ret = AbstractExecute.transform2(file, xsl, "version", "0.1.0");
+		} catch (SaxonApiException | IOException e) { }
+        return ret;
+    }
 }
